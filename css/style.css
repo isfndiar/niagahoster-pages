@@ -278,9 +278,12 @@ left: 0;
     display: inline-block;
   }
 
+.aside { display: none}
+
   .content1 .isi-site {
     flex-wrap: wrap;
   }
   
+
   
 }
