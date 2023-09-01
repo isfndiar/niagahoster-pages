@@ -18,14 +18,13 @@ body {
 
 .navbar {
   display: flex;
-  position: relative;
   width: 100%;
-  /* background-color: var(--ghost-white); */
   padding: 1rem 2rem;
   column-gap: 6px;
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid rgba(0, 0, 0, 0.116);
+  z-index: 9999;
 }
 
 .navbar .logo {
@@ -75,6 +74,10 @@ body {
   justify-content: flex-end;
 }
 
+.hamburger-menu {
+  display: none;
+}
+
 /* container  */
 .container {
   display: grid;
@@ -106,7 +109,7 @@ body {
 
 .aside .search-box {
   margin-top: 20px;
-  width: 90%;
+  width: 100%;
   display: inline-block;
   padding: 5px 12px;
   color: gray;
@@ -124,11 +127,19 @@ body {
 
 .aside .box-content {
   /* WITDHT HARUS DIUBAH KE % */
+  position: relative;
   width: 190px;
   padding: 10px 0 10px 2rem;
   /* border: 1px solid; */
   border-radius: 0 20px 20px 0;
   cursor: pointer;
+  left: -20px;
+  
+}
+
+.box-content span {
+  margin-left: 10px;
+  letter-spacing: 2px;
   
 }
 
@@ -141,16 +152,135 @@ body {
   color: blue;
 }
 
+/* main section */
 .container .main {
   background-color: var(--ghost-white);
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding: 2rem 4rem;
+  /* background-color: red; */
 }
+
+.main .nav {
+  /* background-color: salmon; */
+  width: 100%;
+  display: flex;
+  column-gap: 20px;
+  margin-bottom: 20px;
+}
+
+.main .content1 {
+  width: 100%;
+  background-color: white;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border-radius: 10px;
+  padding: 1.2rem;
+}
+
+.content1 .name-site {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.295);
+}
+
+.content1 .name-site .profile .fa-user {
+  font-size: 1.3rem;
+  
+}
+
+.content1 .name-site .name a {
+  text-decoration: none;
+  color: var(--blue-crayola);
+  font-weight: 600;
+  line-height: 2;
+}
+
+.content1 .name-site .name p {
+  margin: 0;
+  padding: 0;
+  font-size: 0.8rem;
+  font-weight: 300;
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+.content1 .isi-site {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.content1 .isi-site .item {
+  display: flex;
+  /* background-color: salmon; */
+  column-gap:10px;
+}
+
+.content1 .isi-site .item .item-name p {
+  font-weight: 300;
+  font-size: 0.9rem;
+  line-height: 2;
+  color: gray;
+}
+
+.content1 .isi-site .item .item-name .link {
+  color: var(--blue-crayola);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.content1 .isi-site .item .item-name .link:hover {
+  text-decoration: underline;
+}
+
+
+
+
+
+/*  */
 
 
 
 /* media queries */
 @media screen and (max-width: 970px) {
-  .navbar-nav a, .navbar-nav a:nth-child(8){
+  .navbar-nav a, .navbar-nav a:nth-child(8) {
+    /* text-align: center;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.39);
+    border-width: 1px;
+    width: 50%;
+    margin: 0 auto; */
     display: none;
   }
+  
+  /* .navbar-nav {
+    display: none;
+    background-color: salmon;
+    flex-direction: row;
+    position: absolute;
+    top: 60px;
+    left: -100%;
+    width: 700px;
+    row-gap: 10px;
+  } */
+  /* .navbar-nav.active {
+left: 0;
+  }
+  
+  .navbar-nav a:nth-child(8) {
+    width: 90%;
+    left: 0px;
+    top: 0px;
+    margin: 0;
+  } */
+
+  .hamburger-menu {
+    display: inline-block;
+  }
+
+  .content1 .isi-site {
+    flex-wrap: wrap;
+  }
+  
+  
 }

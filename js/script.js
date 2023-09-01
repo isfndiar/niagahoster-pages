@@ -11,4 +11,13 @@ toggleBoxContent.forEach((btn) => {
     };
   });
 
+// hambureger menu ketika diklik
+const navbarNav = document.querySelector('.navbar-nav');
+const hb = document.querySelector('#hamburger-menu')
 
+
+// document.addEventListener('click', function (e) {
+//   if(hb.contains(e.target)) {
+//     navbarNav.classList.toggle('active')
+//   }
+// })
