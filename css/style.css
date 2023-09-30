@@ -364,6 +364,7 @@ left: 0;
     transform-origin: left;
     background-color: var(--white);
     transition: 0.5s;
+    z-index: 999;
   }
   
   .aside.active {

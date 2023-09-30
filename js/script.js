@@ -1,15 +1,6 @@
 // ketika naviigation di klikk
-let boxContent = document.querySelector('.box-content');
-
-const toggleBoxContent = document.querySelectorAll('#toggle');
 
 
-toggleBoxContent.forEach((btn) => {
-    btn.onclick = (e) => {
-      boxContent.classList.toggle('active');
-      e.preventDefault();
-    };
-  });
 
 // hambureger menu ketika diklik
 const navbarNav = document.querySelector('.navbar-nav');
@@ -25,12 +16,12 @@ document.addEventListener('click', function (e) {
   if (!navbarNav.contains(e.target) && !hb.contains(e.target)) {
     navbarNav.classList.remove('active');
   }
-
+  
   if (!aside.contains(e.target) && !ub.contains(e.target)) {
     aside.classList.remove('active');
   }
-
-
+  
+  
 })
 
 
@@ -41,3 +32,27 @@ document.querySelector('.user-btn').onclick = (e) => {
   aside.classList.toggle('active');
   e.preventDefault();
 }
+
+
+// ketika di klik content aside
+let boxContent = document.querySelectorAll('.box-content');
+
+for (let aside of boxContent) {
+  aside.onclick =  function () {
+    boxContent.forEach(element => {
+      element.classList.remove('active')
+    })
+    aside.classList.add('active')
+  }
+}
+
+const closeButton = document.querySelector('#closeBtn')
+
+closeButton.onclick = function () {
+  let boostContent = document.querySelector('#boostContent');
+  boostContent.style.display = 'none';
+  let gridBox = document.querySelectorAll('.grid-box');
+  gridBox.style.gridTemplateColumns = '1fr 1fr 1fr'
+}
+
+
